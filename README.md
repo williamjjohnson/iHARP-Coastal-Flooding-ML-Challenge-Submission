@@ -2,7 +2,7 @@
 
 ## GAF-CNN flood prediction
 
-This submission uses a finetuned ResNet18 model to predict flooding days using 7-day hourly data represented as Gramian Angular Summation fields. The model outputs 14 binary predictions (one-hot encoding) for the forecast period following each 7-day input window. Flooding days are defined using the threshold calculation approach used in the example model (mean + 1.5\*std). Date windows and stations used for testing are excluded from the training dataset.
+This submission uses a finetuned ResNet18 model to predict flooding days using 7-day hourly data represented as Gramian Angular Summation fields. The model outputs 14 binary predictions (one-hot encoding) for the forecast period following each 7-day input window. Date windows and stations used for testing are excluded from the training dataset.
 
 ## Model Architecture
 
@@ -34,8 +34,7 @@ def get_x(i):
     img = Image.fromarray(gaf_scaled, mode='L')
     return PILImage.create(img).convert('RGB')
 ```
-
-The model achieved high accuracy while testing on out of distribution results (for data from Lewes, Fernandina Beach, and The Battery):
+Initial testing results:
 
 ```
 === Confusion Matrix ===
